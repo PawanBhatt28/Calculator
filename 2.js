@@ -19,11 +19,13 @@ function clear(){
 }
 
 function equalsTo(){
+    histEle.innerText = '';
     console.log(numHist);
     let accumulator = numHist[0];
     let cValue ;
     let i = 1;
     while(i < numHist.length){
+        if(i+1 < numHist.length){
         if(numHist[i] === '+'){
             accumulator += numHist[i+1];
         }else if(numHist[i] === '-'){
@@ -38,8 +40,11 @@ function equalsTo(){
         }else{
             cValue = numHist[i];
         }
-        i++;
-        console.log(i, accumulator);
+        i += 2;
+        console.log(i,numHist[i], accumulator,);
+    }else{
+        break;
+    }
     }
 
     screen.value = `${accumulator}`;
