@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: linear-gradient(to bottom right, tomato,rgb(241, 161, 147),white,);
+
+    display: flex;
+    flex-flow: column wrap;
+
+}
+
+#heading {
+    width: 100vw;
+    height: 4rem;
+
+    font-family: poppins;
+
+    font-size: 2rem;
+    text-align: center;
+
+    margin: 1rem 0 0 0 ;
+}
+
+.screen {
+    width: 100vw;
+    height: 3rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+
+    margin: 3rem 0 0 0 ;
+}
+
+.screen #input-screen{
+    height: 95%;
+    width: 30%;
+
+    font-size: 1.5rem;
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+
+.buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+
+    height: 23rem;
+    width: 100vw;
+
+}
+
+.buttons .numbers{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    
+
+    height: 20rem;
+    width: 17rem;
+
+    /* border: 3px solid black;     */
+}
+.buttons .operators{
+    height: 20rem;
+    width: 5rem;
+
+    /* border: 3px solid black; */
+}
+.buttons .numbers button{
+    height: 5rem;
+    width: 5rem;
+
+    font-size: 1.5rem;
+
+    margin: 0.1rem;
+
+    
+}
+
+.buttons .operators button{
+    height: 4rem;
+    width: 5rem;
+
+    background-color: rgb(235, 250, 255);
+    font-size: 1.7rem;
+
+    margin: 0.1rem;
+}
+
+.operators button:hover{
+    background-color: rgb(171, 228, 247);
+}
+
+
+#history {
+
+    justify-content: center;
+    align-content: center;
+
+    width: 100vw;
+    height: 2rem;
+
+    margin: 2rem 0 0 0; 
+    border: 2px solid black;
+
+    text-align: center;
+    font-family: poppins;
+    font-size: 1rem;
+    /* font-weight: 100; */
+}
+
+
+#history h3,h4 {
+    display : inline-block;
+}
