@@ -3,16 +3,17 @@ function screenNum(value){
     if(value === 'c'){
         clear();
     }else if(value === '='){
+        console.log(`Numm numm ${num}`);
+        operate(value,num);
         equalsTo();
     }else{
         nums(value);
     }
 }
 
-const screen = document.querySelector('#input-screen');
-const histEle = document.querySelector('#history h4');
 
 function clear(){
+    num = '';
     screen.value = '';
     histEle.innerText = '';
     numHist = [];
@@ -29,8 +30,7 @@ function equalsTo(){
         if(numHist[i] === '+'){
             accumulator += numHist[i+1];
         }else if(numHist[i] === '-'){
-            accumulator *= numHist[i+1];
-
+            accumulator -= numHist[i+1];
         }else if(numHist[i] === '*'){
             accumulator *= numHist[i+1];
         }else if(numHist[i] === '/'){
@@ -51,16 +51,32 @@ function equalsTo(){
     theHistory();
 }
 
-let numHist = [];
+
+
 function nums(v){
-    screen.value = v ;
-    numHist.push(Number(v));
+    const op = ['+','-','/','*','^'];
+
+    if(op.some((ele)=> ele === v ) != true ){
+        num += v ;
+        screen.value = num;
+    }else{
+        console.log(`Operator ${v}`);
+        console.log(`Num : ${num}`);
+        operate(v,num);
+        num = '';
+    }
+    
 }
 
-function operate(v){
-    numHist.push(v);
-    console.log(v)
-}
+const operate = function (v,num){
+    screen.value = '';
+    num = Number(num);
+    numHist.push(num);
+    if(v !== '='){
+    numHist.push(v)
+    };
+} ;
+
 
 function theHistory(){
     for(ele of numHist){
@@ -68,3 +84,8 @@ function theHistory(){
 
     }
 }
+
+const screen = document.querySelector('#input-screen');
+const histEle = document.querySelector('#history h4');
+let numHist = [];
+let num = '';
